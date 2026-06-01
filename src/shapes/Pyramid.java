@@ -19,6 +19,14 @@ public class Pyramid extends Shape
 	public String toString() {
 		return "side: " + side + "\nheight: " + getHeight();
 	}
-
+	public double calcVolume () {
+		double volume = (1/3)*(Math.pow(side, 2))*height;
+		return volume;
+	}
+	
+	public double calcBaseArea() {
+		double baseArea = Math.pow(side, 2);
+		return baseArea;
+	}
 	
 }

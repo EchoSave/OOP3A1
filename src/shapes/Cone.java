@@ -28,6 +28,13 @@ public class Cone extends Shape
 		return "radius: " + radius + "\nheight: " + height;
 	}
 	
-	
+	public double calcBaseArea() {
+		double baseArea = Math.pow(radius, 2);
+		return baseArea;
+	}
 
+	public double calcVolume () {
+		double volume = (1/3)*Math.PI*(Math.pow(radius, 2))*height;
+		return volume;
+	}
 }

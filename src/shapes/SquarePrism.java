@@ -10,6 +10,14 @@ public class SquarePrism extends Prism
 		// TODO Auto-generated constructor stub
 	}
 
-
+	public double calcVolume () {
+		double volume = (Math.pow(side, 2))*height;
+		return volume;
+	}
+	
+	public double calcBaseArea() {
+		double baseArea = Math.pow(side, 2);
+		return baseArea;
+	}
 
 }
