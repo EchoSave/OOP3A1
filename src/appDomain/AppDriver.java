@@ -1,5 +1,7 @@
 package appDomain;
 
+import manager.AppManager;
+
 /**
  * <p>
  * This application driver code is designed to be used as a basis for the
@@ -16,7 +18,7 @@ public class AppDriver
 	 *  @param args The input to control the execution of the application.
 	 */
 	public static void main( String[] args )
-	{
+	{ new AppManager();
 
 		// refer to demo00 BasicFileIO.java for a simple example on how to
 		// read data from a text file
