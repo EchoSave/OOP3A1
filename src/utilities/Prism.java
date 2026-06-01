@@ -1,9 +1,13 @@
 package utilities;
 
+import java.util.Comparator;
+
 public abstract class Prism {
 
 	double height;
 	double side;
-	double calcVolume();
-	double calcBaseArea();
+	abstract double calcVolume();
+	abstract double calcBaseArea();
+	
+	
 }
