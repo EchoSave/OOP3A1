@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import shapes.Cone;
+import shapes.Cylinder;
 
 public class AppManager {
 
@@ -26,7 +27,10 @@ public class AppManager {
 					Cone cone = new Cone(shapeHeight, shapeRadius);
 					
 				}else if(shape[0].equalsIgnoreCase("Cylinder")){
-					double shapeRadiue = Double.parseDouble(shape[2]);
+					double shapeRadius = Double.parseDouble(shape[2]);
+					Cylinder cylinder = new Cylinder(shapeHeight,shapeRadius);
+				}else if(shape[0].equalsIgnoreCase("Pyramid")) {
+					
 				}
 			}
 		}
