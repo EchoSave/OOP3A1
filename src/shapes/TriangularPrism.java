@@ -5,16 +5,11 @@ import utilities.Prism;
 public class TriangularPrism extends Prism
 {
 
-	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+	public TriangularPrism(double height, double side) {
+		super(height, side);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public int compare(Object o1, Object o2) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 
 }
