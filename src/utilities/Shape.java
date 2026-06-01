@@ -4,8 +4,8 @@ import java.util.Comparator;
 
 public abstract class Shape implements Comparable<Shape>{
 
-	double height;
-	double calcVolume() {
+	public double height;
+	public double calcVolume() {
 		return 0;
 	}
 	public double calcBaseArea() {
