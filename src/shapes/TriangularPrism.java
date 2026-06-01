@@ -10,6 +10,14 @@ public class TriangularPrism extends Prism
 		// TODO Auto-generated constructor stub
 	}
 
-
+	public double calcVolume () {
+		double volume = calcBaseArea()*height;
+		return volume;
+	}
+	
+	public double calcBaseArea() {
+		double baseArea = (Math.pow(side, 2) *Math.sqrt(3))/4;
+		return baseArea;
+	}
 
 }

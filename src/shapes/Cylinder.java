@@ -34,11 +34,13 @@ public class Cylinder extends Shape
 
 
 	public double calcVolume () {
-		return 0;
+		double volume = Math.PI*(Math.pow(radius, 2))*height;
+		return volume;
 	}
 	
 	public double calcBaseArea() {
-		return 0;
+		double baseArea = Math.PI*Math.pow(radius, 2);
+		return baseArea;
 	}
 
 }

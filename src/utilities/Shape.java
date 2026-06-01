@@ -1,7 +1,5 @@
 package utilities;
 
-import java.util.Comparator;
-
 public abstract class Shape implements Comparable<Shape>{
 
 	public double height;

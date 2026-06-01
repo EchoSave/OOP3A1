@@ -1,11 +1,9 @@
 package utilities;
 
-import java.util.Comparator;
-
 public abstract class Prism extends Shape{
 
-	double height;
-	double side;
+	public double height;
+	public double side;
 	public double calcVolume() {
 		return 0;
 	}
