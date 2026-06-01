@@ -11,6 +11,27 @@ public class Cylinder extends Shape
 		super(height);
 		this.radius = radius;
 	}
+	
+	
+
+	public double getRadius() {
+		return radius;
+	}
+
+
+
+	public void setRadius(double radius) {
+		this.radius = radius;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "radius: " + radius + "\nheight: " + height;
+	}
+
+
 
 	public double calcVolume () {
 		return 0;

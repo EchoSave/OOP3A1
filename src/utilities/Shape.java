@@ -4,9 +4,13 @@ import java.util.Comparator;
 
 public abstract class Shape implements Comparable<Shape>{
 
-	double height;
-	double calcVolume();
-	public double calcBaseArea();
+	public double height;
+	public double calcVolume() {
+		return 0;
+	}
+	public double calcBaseArea() {
+		return 0;
+	}
 	public Shape(double height) {
 		super();
 		this.height = height;
@@ -29,16 +33,16 @@ public abstract class Shape implements Comparable<Shape>{
 		else return 0;
 	}
 	
-	public int compareBaseArea(Shape shape1, Shape shape2) {
-		if( shape1.calcBaseArea() > shape2.calcBaseArea()) return 1;
-		else if (shape1.calcBaseArea() < shape2.calcBaseArea()) return -1;
-		return 0;
-		
-	}
-	
-	public int comapreVolume(Shape shape1, Shape shape2) {
-		if(shape1.calcVolume() > shape2.calcVolume()) return 1;
-		else if (shape1.calcVolume() < shape2.calcVolume()) return -1;
-		return 0;
-	}
+//	public int compareBaseArea(Shape shape1, Shape shape2) {
+//		if( shape1.calcBaseArea() > shape2.calcBaseArea()) return 1;
+//		else if (shape1.calcBaseArea() < shape2.calcBaseArea()) return -1;
+//		return 0;
+//		
+//	}
+//	
+//	public int comapreVolume(Shape shape1, Shape shape2) {
+//		if(shape1.calcVolume() > shape2.calcVolume()) return 1;
+//		else if (shape1.calcVolume() < shape2.calcVolume()) return -1;
+//		return 0;
+//	}
 }
