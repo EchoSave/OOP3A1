@@ -80,34 +80,7 @@ public class AppManager {
 	    Shape[] arrayOShapes = shapes.toArray(new Shape[0]);
 	    //System.out.println(arrayOShapes);
 	}
-
-	public void sortBy() {
-	    //System.out.println("Choose sorting method (height, basearea, volume):");
-	    String choice = userInput.nextLine().toLowerCase();
-
-	    switch (choice) {
-	        case "h":
-	            Collections.sort(shapes);
-	            break;
-
-	        case "a":
-	            Collections.sort(shapes, new BaseAreaCompare());
-	            break;
-
-	        case "v":
-	            Collections.sort(shapes, new VolumeCompare());
-	            break;
-
-	        default:
-	            System.out.println("Invalid sorting method.");
-	            return;
-	    }
-
-	    // Print results
-	    for (Shape s : shapes) {
-	        System.out.println(s);
-	    }
-	}
+	
 	public void sortWith() {
 	    System.out.println("Choose algorithm (b=Bubble, s=Selection, i=Insertion, m=Merge, q=Quick, z=MySort):");
 
