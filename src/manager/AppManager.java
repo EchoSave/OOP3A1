@@ -1,10 +1,7 @@
 package manager;
-
 import java.io.*;
 import java.util.*;
-
 import shapes.*;
-import sorting.SortContext;
 import utilities.*;
 import utilities.Sorter;  
 
@@ -32,8 +29,6 @@ public class AppManager {
 
 	// Get shapes
 	public void loadShapes(String fileName) throws FileNotFoundException {
-
-	    //System.out.println("Enter file: shapes1, shapes2, or shapes3");
 	    String userChoice = fileName; // user enters one of the txt files
 
 	    String filePath = fileChoice(userChoice);
@@ -44,7 +39,6 @@ public class AppManager {
 	    try (Scanner readFile = new Scanner(file)) { 
 	        while (readFile.hasNext()) {
 	            String[] shape = readFile.nextLine().split(" ");
-	            //readFile.nextLine(); I think this is a bug
 	            String type = shape[0];
 	            double height = Double.parseDouble(shape[1]);
 	            double sideOrRadius = Double.parseDouble(shape[2]);
@@ -81,14 +75,10 @@ public class AppManager {
 	        }
 	    }
 	    Shape[] arrayOShapes = shapes.toArray(new Shape[0]);
-	    //System.out.println(arrayOShapes);
 	}
 	
 	public void sortWith(char compareType, char sortType) {
-	    System.out.println("Choose algorithm (b=Bubble, s=Selection, i=Insertion, m=Merge, q=Quick, z=MySort):");
-
-	    //String choice = userInput.nextLine().toLowerCase();
-	    
+	    System.out.println("Choose algorithm (b=Bubble, s=Selection, i=Insertion, m=Merge, q=Quick, z=MySort):");  
 	    String choice = String.valueOf(sortType);
 
 	    Sorter sorter = null;
@@ -107,10 +97,6 @@ public class AppManager {
 	            System.out.println("Invalid choice");
 	            return;
 	    }
-	    
-
-		//System.out.println("Sort by (h=height, a=area, v=volume):");
-		//String type = userInput.nextLine().toLowerCase();
 
 	    String type = String.valueOf(compareType);
 	    
@@ -127,8 +113,6 @@ public class AppManager {
     	double timeMs = (end - start) / 1_000_000.0;
     	System.out.printf("Time taken: %.3f ms%n", timeMs); 
     	
-        
-    
 	    
 	    // OUTPUT //
 
@@ -192,51 +176,4 @@ public class AppManager {
 	    } 
 	    
 	}
-	/*
-	public void executeSortingAndBenchmarking() {
-		 
-		SortContext sortContext = new SortContext();
- 
-		System.out.println("Choose sorting algorithm: b, s, i, m, q, or z");
-		String choice = userInput.nextLine().toLowerCase();
- 
-		long timeTaken = 0;
- 
-		// Timer only measures selected sorting method
-		switch (choice) {
-		case "b":
-			timeTaken = sortContext.runSort(() -> BubbleSort());
-			break;
- 
-		case "s":
-			timeTaken = sortContext.runSort(() -> SelectionSort());
-			break;
- 
-		case "i":
-			timeTaken = sortContext.runSort(() -> insertionSort());
-			break;
- 
-		case "m":
-			timeTaken = sortContext.runSort(() -> mergeSort());
-			break;
- 
-		case "q":
-			timeTaken = sortContext.runSort(() -> quickSort());
-			break;
- 
-		case "z":
-			timeTaken = sortContext.runSort(() -> mySort());
-			break;
- 
-		default:
-			System.out.println("Invalid sorting algorithm.");
-			return;
-		}
- 
-		// Print first, every 1000th, and last shape
-		OutputUtil.printSortedValues(shapes.toArray(new Shape[0]));
- 
-		// Print sorting time
-		BenchmarkUtil.printBenchmark(timeTaken);
-	} */
 }

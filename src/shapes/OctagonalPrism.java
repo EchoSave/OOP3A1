@@ -12,7 +12,6 @@ public class OctagonalPrism extends Prism
 
 	public double calcVolume () {
 		double volume = calcBaseArea()*height;
-		//System.out.println(volume);
 		return volume;
 	}
 	

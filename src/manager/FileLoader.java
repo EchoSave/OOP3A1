@@ -36,12 +36,6 @@ public class FileLoader {
 		}
 		
 		readFile.close();
-		
-		
-		/*
-		for (Shape s : shapes) {
-		    System.out.println(s);
-		} */
 
 		return shapes;
 	}

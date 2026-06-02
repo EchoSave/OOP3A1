@@ -25,8 +25,6 @@ public class ArgumentParser {
 			
 			if (currentArg.startsWith("-f")) {
 				fileName = currentArg.substring(2);
-				//System.out.println("FileName is: "  + fileName);
-				
 				try { 
 			        shapeArray = FileLoader.loadShapes("res/" + fileName);
 			    } catch (FileNotFoundException e) {
@@ -38,17 +36,13 @@ public class ArgumentParser {
 				
 			} else if (currentArg.startsWith("-t")) {
 				compareType = currentArg.charAt(2);
-				
-				
-				
+			
 			} else if (currentArg.startsWith("-s")) {
-				sortType = currentArg.charAt(2);		
-				
+				sortType = currentArg.charAt(2);			
 			}		
 		}
 		app.sortWith(compareType, sortType);
 	}
-	
 	private void validate() {
 		if (fileName == null || fileName.isEmpty()) { 
 			throw new IllegalArgumentException( "Invalid file path. Use: -fshapes1.txt, -fshapes2.txt, -fshapes3.txt"); 

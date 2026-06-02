@@ -33,16 +33,13 @@ public class Cone extends Shape
 
 	
 	public double calcBaseArea() {
-		//double baseArea = Math.pow(radius, 2);
 		double baseArea = Math.pow(radius, 2);
 		return baseArea;
 	}
 
 	public double calcVolume () {
 		
-		//double volume = (1/3)*Math.PI*(Math.pow(radius, 2))*height;
 		double volume = (1.0/3.0) * Math.PI * Math.pow(radius, 2) * height;
-		//System.out.println(volume);
 		return volume;
 	}
 }
