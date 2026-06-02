@@ -5,6 +5,7 @@ import java.util.*;
 
 import shapes.*;
 import utilities.*;
+import utilities.Sorter;  
 
 public class AppManager {
 
@@ -107,21 +108,39 @@ public class AppManager {
 	        System.out.println(s);
 	    }
 	}
-
 	public void sortWith() {
-		System.out.println("Choose algorithm (b=Bubble, s=Selection, i=Insertion, m=Merge, q=Quick, z=MySort):");
-		String choice = userInput.nextLine().toLowerCase(); // need to add invalid input
-		
-		switch(choice) {
-		case "b": bubbleSort(); break;
-		case "s": selectionSort(); break;
-		case "i": insertionSort(); break;
-		case "m": mergeSort(); break;
-		case "q": quickSort(); break;
-		case "z": mySort(); break;
-		}
+	    System.out.println("Choose algorithm (b=Bubble, s=Selection, i=Insertion, m=Merge, q=Quick, z=MySort):");
+
+	    String choice = userInput.nextLine().toLowerCase();
+
+	    Sorter sorter = null;
+
+	    switch(choice) { // changes sort to the sort algorithm
+	        case "b": sorter = (Sorter) new BubbleSort(); break;
+	        case "s": sorter = new SelectionSort(); break;
+	        case "i": sorter = new InsertionSort(); break;
+	        case "m": sorter = new MergeSort(); break;
+	        case "q": sorter = new QuickSort(); break;
+	        case "z": sorter = (Sorter) new ShellSort(); break;
+	        default:
+	            System.out.println("Invalid choice");
+	            return;
+	    }
+
+	    long start = System.nanoTime(); // start the timer
+
+	    sorter.sort(shapes);
+
+	    long end = System.nanoTime(); // end timer
+
+	    System.out.println("Time taken: " + (end - start) + " ns");
+
+	    for (Shape s : shapes) {
+	        System.out.println(s);
+	    }
 	}
 
+			/*
 
 	private void mySort() {
 	    int n = shapes.size();
@@ -270,4 +289,5 @@ public class AppManager {
 	        System.out.println(s);
 	    }
 	}
+	*/
 }

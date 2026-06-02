@@ -27,7 +27,8 @@ public class AppDriver
 	{
 
 
-
+		System.out.println("Sort by (h=height, a=area, v=volume):");
+		//String choice = userInput.nextLine().toLowerCase();
 		// Load shapes from file
         Shape[] shapeArray = null;
 		try {
@@ -43,6 +44,9 @@ public class AppDriver
         // Create AppManager and give it the shapes
         AppManager app = new AppManager();
         app.shapes = shapeList;
+
+
+        
 
         // Run sorting
         app.sortWith();
