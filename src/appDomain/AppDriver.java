@@ -28,7 +28,8 @@ public class AppDriver
 	{
 
 
-
+		// Testing Code by Josh
+		
 		Shape[] shapeArray = null;
 	
 		// set the file to shapes1.txt for testing

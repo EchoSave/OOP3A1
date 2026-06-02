@@ -140,21 +140,72 @@ public class AppManager {
 
 	    long end = System.nanoTime(); // end timer
 
-	    System.out.println("Time taken: " + (end - start) + " ns");
 
-	    for (Shape s : shapes) {
+    	double timeMs = (end - start) / 1_000_000.0;
+    	System.out.printf("Time taken: %.3f ms%n", timeMs);
+    
+	    
+	    //OUTPUT
+
+	    // First element
+	    Shape first = shapes.get(0);
+
+	    if (type.equals("v")) {
+	        System.out.println("First element is:    " + first.getClass().getName() +
+	            "    Volume: " + first.calcVolume());
+	    } 
+	    else if (type.equals("a")) {
+	        System.out.println("First element is:    " + first.getClass().getName() +
+	            "    BaseArea: " + first.calcBaseArea());
+	    } 
+	    else {
+	        System.out.println("First element is:    " + first);
+	    }
+
+
+	    // For every 1000th element
+
+		for (int i = 0; i < shapes.size(); i++) {
+		    if (i == 0 || i == shapes.size() - 1) continue;
+
+
+	        Shape s = shapes.get(i);
 
 	        if (type.equals("v")) {
-	            System.out.println(s.getClass().getSimpleName() + " volume=" + s.calcVolume());
+	            System.out.println((i) + "000th element:    " +
+	                s.getClass().getName() +
+	                "    Volume: " + s.calcVolume());
 
-	        } else if (type.equals("a")) {
-	            System.out.println(s.getClass().getSimpleName() + " baseArea=" + s.calcBaseArea());
+	        } 
+	        else if (type.equals("a")) {
+	            System.out.println((i) + "000th element:    " +
+	                s.getClass().getName() +
+	                "    BaseArea: " + s.calcBaseArea());
 
-	        } else { // height
-	            System.out.println(s);
+	        } 
+	        else {
+	            System.out.println((i) + "000th element:    " + s);
 	        }
-
 	    }
+
+
+	    // last element
+	    Shape last = shapes.get(shapes.size() - 1);
+
+	    if (type.equals("v")) {
+	        System.out.println("Last element is:    " +
+	            last.getClass().getName() +
+	            "    Volume: " + last.calcVolume());
+	    } 
+	    else if (type.equals("a")) {
+	        System.out.println("Last element is:    " +
+	            last.getClass().getName() +
+	            "    BaseArea: " + last.calcBaseArea());
+	    } 
+	    else {
+	        System.out.println("Last element is:    " + last);
+	    } 
+	    
 	}
 
 			/*
