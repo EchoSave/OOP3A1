@@ -28,7 +28,7 @@ public class MergeSort implements Sorter {
         int j = mid + 1;
 
         while (i <= mid && j <= right) {
-            if (compare(shapes.get(i), shapes.get(j), type) >= 0) {
+            if (Sorter.compare(shapes.get(i), shapes.get(j), type) >= 0) {
                 temp.add(shapes.get(i++));
             } else {
                 temp.add(shapes.get(j++));
@@ -41,14 +41,5 @@ public class MergeSort implements Sorter {
         for (int k = 0; k < temp.size(); k++) {
             shapes.set(left + k, temp.get(k));
         }
-    }
-
-    private int compare(Shape s1, Shape s2, String type) {
-        switch (type) {
-            case "h": return s1.compareTo(s2);
-            case "a": return Double.compare(s1.calcBaseArea(), s2.calcBaseArea());
-            case "v": return Double.compare(s1.calcVolume(), s2.calcVolume());
-        }
-        return 0;
     }
 }

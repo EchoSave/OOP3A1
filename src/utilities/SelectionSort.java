@@ -13,7 +13,7 @@ public class SelectionSort implements Sorter {
             int maxIndex = i;
 
             for (int j = i + 1; j < n; j++) {
-                if (compare(shapes.get(j), shapes.get(maxIndex), type) > 0) {
+                if (Sorter.compare(shapes.get(j), shapes.get(maxIndex), type) > 0) {
                     maxIndex = j;
                 }
             }
@@ -24,12 +24,5 @@ public class SelectionSort implements Sorter {
         }
     }
 
-    private int compare(Shape s1, Shape s2, String type) {
-        switch (type) {
-            case "h": return s1.compareTo(s2);
-            case "a": return Double.compare(s1.calcBaseArea(), s2.calcBaseArea());
-            case "v": return Double.compare(s1.calcVolume(), s2.calcVolume());
-        }
-        return 0;
-    }
+
 }

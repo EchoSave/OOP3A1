@@ -1,14 +1,8 @@
 package utilities;
 
+public class CompareHelper {
 
-import java.util.ArrayList;
-import utilities.Shape;
-
-public interface Sorter {
-	void sort(ArrayList<Shape> shapes, String type);
-	
-
-    static int compare(Shape s1, Shape s2, String type) {
+    public static int compare(Shape s1, Shape s2, String type) {
         switch (type) {
             case "h":
                 return s1.compareTo(s2);
@@ -23,4 +17,3 @@ public interface Sorter {
     }
 
 }
-

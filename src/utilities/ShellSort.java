@@ -15,7 +15,7 @@ public class ShellSort implements Sorter {
                 Shape temp = shapes.get(i);
                 int j = i;
 
-                while (j >= gap && compare(shapes.get(j - gap), temp, type) < 0) {
+                while (j >= gap && Sorter.compare(shapes.get(j - gap), temp, type) < 0) {
                     shapes.set(j, shapes.get(j - gap));
                     j -= gap;
                 }
@@ -23,14 +23,5 @@ public class ShellSort implements Sorter {
                 shapes.set(j, temp);
             }
         }
-    }
-
-    private int compare(Shape s1, Shape s2, String type) {
-        switch (type) {
-            case "h": return s1.compareTo(s2);
-            case "a": return Double.compare(s1.calcBaseArea(), s2.calcBaseArea());
-            case "v": return Double.compare(s1.calcVolume(), s2.calcVolume());
-        }
-        return 0;
     }
 }

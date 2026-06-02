@@ -24,7 +24,8 @@ public class QuickSort implements Sorter {
         int i = low - 1;
 
         for (int j = low; j < high; j++) {
-            if (compare(shapes.get(j), pivot, type) > 0) {
+            if (Sorter.compare(shapes.get(j), pivot, type) > 0) {
+
                 i++;
                 Shape temp = shapes.get(i);
                 shapes.set(i, shapes.get(j));
@@ -37,15 +38,6 @@ public class QuickSort implements Sorter {
         shapes.set(high, temp);
 
         return i + 1;
-    }
-
-    private int compare(Shape s1, Shape s2, String type) {
-        switch (type) {
-            case "h": return s1.compareTo(s2);
-            case "a": return Double.compare(s1.calcBaseArea(), s2.calcBaseArea());
-            case "v": return Double.compare(s1.calcVolume(), s2.calcVolume());
-        }
-        return 0;
     }
 }
 
