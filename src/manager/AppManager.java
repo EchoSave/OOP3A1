@@ -143,7 +143,17 @@ public class AppManager {
 	    System.out.println("Time taken: " + (end - start) + " ns");
 
 	    for (Shape s : shapes) {
-	        System.out.println(s);
+
+	        if (type.equals("v")) {
+	            System.out.println(s.getClass().getSimpleName() + " volume=" + s.calcVolume());
+
+	        } else if (type.equals("a")) {
+	            System.out.println(s.getClass().getSimpleName() + " baseArea=" + s.calcBaseArea());
+
+	        } else { // height
+	            System.out.println(s);
+	        }
+
 	    }
 	}
 
