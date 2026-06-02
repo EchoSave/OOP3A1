@@ -27,10 +27,13 @@ public abstract class Prism extends Shape{
 	public void setSide(double side) {
 		this.side = side;
 	}
+
 	@Override
 	public String toString() {
-		return "height: " + height + "\nside: " + side;
+	    return getClass().getSimpleName() +
+	           " height=" + height +
+	           " side=" + side;
 	}
-	
+
 	
 }

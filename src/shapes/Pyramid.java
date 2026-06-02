@@ -15,10 +15,14 @@ public class Pyramid extends Shape
 	public void setSide(double side) {
 		this.side = side;
 	}
+
 	@Override
 	public String toString() {
-		return "side: " + side + "\nheight: " + getHeight();
+	    return getClass().getSimpleName() +
+	           " height=" + height +
+	           " side=" + side;
 	}
+
 	public double calcVolume () {
 		double volume = (1/3)*(Math.pow(side, 2))*height;
 		return volume;

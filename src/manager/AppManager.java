@@ -77,7 +77,7 @@ public class AppManager {
 	        }
 	    }
 	    Shape[] arrayOShapes = shapes.toArray(new Shape[0]);
-	    System.out.println(arrayOShapes);
+	    //System.out.println(arrayOShapes);
 	}
 
 	public void sortBy() {
@@ -265,7 +265,7 @@ public class AppManager {
 	            }
 	        }
 	    }
-	    System.out.println(shapes);
+	    
 	    for (Shape s : shapes) {
 	        System.out.println(s);
 	    }

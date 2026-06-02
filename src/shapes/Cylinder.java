@@ -28,8 +28,11 @@ public class Cylinder extends Shape
 
 	@Override
 	public String toString() {
-		return "radius: " + radius + "\nheight: " + height;
+	    return getClass().getSimpleName() +
+	           " height=" + height +
+	           " radius=" + radius;
 	}
+
 
 
 
