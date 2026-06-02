@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 import shapes.*;
+import sorting.SortContext;
 import utilities.*;
 import utilities.Sorter;  
 
@@ -107,6 +108,8 @@ public class AppManager {
 		String type = userInput.nextLine().toLowerCase();
 
 
+		// Timer
+		
 	    long start = System.nanoTime(); // start the timer
 
 	    sorter.sort(shapes, type);
@@ -115,7 +118,9 @@ public class AppManager {
 
 
     	double timeMs = (end - start) / 1_000_000.0;
-    	System.out.printf("Time taken: %.3f ms%n", timeMs);
+    	System.out.printf("Time taken: %.3f ms%n", timeMs); 
+    	
+        
     
 	    
 	    // OUTPUT //
@@ -180,4 +185,51 @@ public class AppManager {
 	    } 
 	    
 	}
+	/*
+	public void executeSortingAndBenchmarking() {
+		 
+		SortContext sortContext = new SortContext();
+ 
+		System.out.println("Choose sorting algorithm: b, s, i, m, q, or z");
+		String choice = userInput.nextLine().toLowerCase();
+ 
+		long timeTaken = 0;
+ 
+		// Timer only measures selected sorting method
+		switch (choice) {
+		case "b":
+			timeTaken = sortContext.runSort(() -> BubbleSort());
+			break;
+ 
+		case "s":
+			timeTaken = sortContext.runSort(() -> SelectionSort());
+			break;
+ 
+		case "i":
+			timeTaken = sortContext.runSort(() -> insertionSort());
+			break;
+ 
+		case "m":
+			timeTaken = sortContext.runSort(() -> mergeSort());
+			break;
+ 
+		case "q":
+			timeTaken = sortContext.runSort(() -> quickSort());
+			break;
+ 
+		case "z":
+			timeTaken = sortContext.runSort(() -> mySort());
+			break;
+ 
+		default:
+			System.out.println("Invalid sorting algorithm.");
+			return;
+		}
+ 
+		// Print first, every 1000th, and last shape
+		OutputUtil.printSortedValues(shapes.toArray(new Shape[0]));
+ 
+		// Print sorting time
+		BenchmarkUtil.printBenchmark(timeTaken);
+	} */
 }
