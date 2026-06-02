@@ -24,7 +24,8 @@ public class Pyramid extends Shape
 	}
 
 	public double calcVolume () {
-		double volume = (1/3)*(Math.pow(side, 2))*height;
+		double volume = (1.0/3.0) * Math.pow(side, 2) * height;
+		//System.out.println(volume);
 		return volume;
 	}
 	

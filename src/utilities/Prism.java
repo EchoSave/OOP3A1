@@ -5,9 +5,11 @@ public abstract class Prism extends Shape{
 	public double height;
 	public double side;
 	public double calcVolume() {
+		System.out.println("1");
 		return 0;
 	}
 	public double calcBaseArea() {
+		System.out.println("2");
 		return 0;
 	}
 	public Prism(double height, double side) {

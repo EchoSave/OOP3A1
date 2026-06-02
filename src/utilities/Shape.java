@@ -4,9 +4,12 @@ public abstract class Shape implements Comparable<Shape>{
 
 	public double height;
 	public double calcVolume() {
+		System.out.println("3");
 		return 0;
+		
 	}
 	public double calcBaseArea() {
+		System.out.println("4");
 		return 0;
 	}
 	public Shape(double height) {

@@ -1,25 +1,31 @@
 package utilities;
 
 import java.util.ArrayList;
-import utilities.Shape;
 
 public class InsertionSort implements Sorter {
 
     @Override
-    public void sort(ArrayList<Shape> shapes) {
+    public void sort(ArrayList<Shape> shapes, String type) {
 
-        int n = shapes.size();
-
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < shapes.size(); i++) {
             Shape key = shapes.get(i);
             int j = i - 1;
 
-            while (j >= 0 && shapes.get(j).compareTo(key) < 0) {
+            while (j >= 0 && compare(shapes.get(j), key, type) < 0) {
                 shapes.set(j + 1, shapes.get(j));
                 j--;
             }
 
             shapes.set(j + 1, key);
         }
+    }
+
+    private int compare(Shape s1, Shape s2, String type) {
+        switch (type) {
+            case "h": return s1.compareTo(s2);
+            case "a": return Double.compare(s1.calcBaseArea(), s2.calcBaseArea());
+            case "v": return Double.compare(s1.calcVolume(), s2.calcVolume());
+        }
+        return 0;
     }
 }

@@ -1,12 +1,11 @@
 package utilities;
 
 import java.util.ArrayList;
-import utilities.Shape;
 
 public class SelectionSort implements Sorter {
 
     @Override
-    public void sort(ArrayList<Shape> shapes) {
+    public void sort(ArrayList<Shape> shapes, String type) {
 
         int n = shapes.size();
 
@@ -14,7 +13,7 @@ public class SelectionSort implements Sorter {
             int maxIndex = i;
 
             for (int j = i + 1; j < n; j++) {
-                if (shapes.get(j).compareTo(shapes.get(maxIndex)) > 0) {
+                if (compare(shapes.get(j), shapes.get(maxIndex), type) > 0) {
                     maxIndex = j;
                 }
             }
@@ -23,5 +22,14 @@ public class SelectionSort implements Sorter {
             shapes.set(maxIndex, shapes.get(i));
             shapes.set(i, temp);
         }
+    }
+
+    private int compare(Shape s1, Shape s2, String type) {
+        switch (type) {
+            case "h": return s1.compareTo(s2);
+            case "a": return Double.compare(s1.calcBaseArea(), s2.calcBaseArea());
+            case "v": return Double.compare(s1.calcVolume(), s2.calcVolume());
+        }
+        return 0;
     }
 }

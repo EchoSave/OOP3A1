@@ -116,20 +116,27 @@ public class AppManager {
 	    Sorter sorter = null;
 
 	    switch(choice) { // changes sort to the sort algorithm
-	        case "b": sorter = (Sorter) new BubbleSort(); break;
-	        case "s": sorter = new SelectionSort(); break;
-	        case "i": sorter = new InsertionSort(); break;
-	        case "m": sorter = new MergeSort(); break;
-	        case "q": sorter = new QuickSort(); break;
-	        case "z": sorter = (Sorter) new ShellSort(); break;
+
+			case "b": sorter = new BubbleSort(); break;
+			case "s": sorter = new SelectionSort(); break;
+			case "i": sorter = new InsertionSort(); break;
+			case "m": sorter = new MergeSort(); break;
+			case "q": sorter = new QuickSort(); break;
+			case "z": sorter = new ShellSort(); break;
+
 	        default:
 	            System.out.println("Invalid choice");
 	            return;
 	    }
+	    
+
+		System.out.println("Sort by (h=height, a=area, v=volume):");
+		String type = userInput.nextLine().toLowerCase();
+
 
 	    long start = System.nanoTime(); // start the timer
 
-	    sorter.sort(shapes);
+	    sorter.sort(shapes, type);
 
 	    long end = System.nanoTime(); // end timer
 

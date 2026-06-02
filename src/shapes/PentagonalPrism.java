@@ -12,11 +12,18 @@ public class PentagonalPrism extends Prism
 
 	public double calcVolume () {
 		double volume = calcBaseArea()*height;
+		//System.out.println(volume);
 		return volume;
 	}
 	
-	public double calcBaseArea() {
+	/*public double calcBaseArea() {
 		double baseArea = (5*Math.pow(side, 2)*Math.tan(54))/4;
 		return baseArea;
+	}*/
+
+	public double calcBaseArea() {
+	    double baseArea = (5.0 / 4.0) * Math.pow(side, 2) * Math.tan(Math.toRadians(54));
+		return baseArea;
 	}
+
 }

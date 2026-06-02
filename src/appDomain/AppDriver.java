@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 import manager.AppManager;
 import manager.FileLoader;
 import utilities.Shape;
@@ -27,29 +28,30 @@ public class AppDriver
 	{
 
 
-		System.out.println("Sort by (h=height, a=area, v=volume):");
-		//String choice = userInput.nextLine().toLowerCase();
-		// Load shapes from file
-        Shape[] shapeArray = null;
-		try {
-			shapeArray = FileLoader.loadShapes("res/shapes1.txt");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-        // Convert array → ArrayList (needed for your sorting)
-        ArrayList<Shape> shapeList = new ArrayList<>(Arrays.asList(shapeArray));
+		Shape[] shapeArray = null;
+	
+		// set the file to shapes1.txt for testing
+	    try { 
+	        shapeArray = FileLoader.loadShapes("res/shapes1.txt");
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	    }
+	
+	    // makes new list
+	    ArrayList<Shape> shapeList = new ArrayList<>(Arrays.asList(shapeArray));
+	
+	    // sets list to app.shapes
+	    AppManager app = new AppManager();
+	    app.shapes = shapeList;
+	
+	    // sorts, asks user what sorting and what type
+	    app.sortWith();
+	    
 
-        // Create AppManager and give it the shapes
-        AppManager app = new AppManager();
-        app.shapes = shapeList;
+		
 
 
-        
-
-        // Run sorting
-        app.sortWith();
 
 
 		

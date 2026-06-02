@@ -12,6 +12,7 @@ public class SquarePrism extends Prism
 
 	public double calcVolume () {
 		double volume = (Math.pow(side, 2))*height;
+		//System.out.println(volume);
 		return volume;
 	}
 	
