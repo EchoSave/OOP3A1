@@ -10,6 +10,8 @@ import utilities.Sorter;
 
 public class AppManager {
 
+	
+	
 	private final String shapes1 = "res/shapes1.txt";
 	private final String shapes2 = "res/shapes2.txt";
 	private final String shapes3 = "res/shapes3.txt";
@@ -29,10 +31,10 @@ public class AppManager {
 	}
 
 	// Get shapes
-	public void loadShapes() throws FileNotFoundException {
+	public void loadShapes(String fileName) throws FileNotFoundException {
 
-	    System.out.println("Enter file: shapes1, shapes2, or shapes3");
-	    String userChoice = userInput.nextLine(); // user enters one of the txt files
+	    //System.out.println("Enter file: shapes1, shapes2, or shapes3");
+	    String userChoice = fileName; // user enters one of the txt files
 
 	    String filePath = fileChoice(userChoice);
 	    if (filePath == null) return;
@@ -82,13 +84,16 @@ public class AppManager {
 	    //System.out.println(arrayOShapes);
 	}
 	
-	public void sortWith() {
+	public void sortWith(char compareType, char sortType) {
 	    System.out.println("Choose algorithm (b=Bubble, s=Selection, i=Insertion, m=Merge, q=Quick, z=MySort):");
 
-	    String choice = userInput.nextLine().toLowerCase();
+	    //String choice = userInput.nextLine().toLowerCase();
+	    
+	    String choice = String.valueOf(sortType);
 
 	    Sorter sorter = null;
 
+	    
 	    switch(choice) { // changes sort to the sort algorithm
 
 			case "b": sorter = new BubbleSort(); break;
@@ -104,9 +109,11 @@ public class AppManager {
 	    }
 	    
 
-		System.out.println("Sort by (h=height, a=area, v=volume):");
-		String type = userInput.nextLine().toLowerCase();
+		//System.out.println("Sort by (h=height, a=area, v=volume):");
+		//String type = userInput.nextLine().toLowerCase();
 
+	    String type = String.valueOf(compareType);
+	    
 
 		// Timer
 		

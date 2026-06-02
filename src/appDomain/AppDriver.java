@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 
 import manager.AppManager;
+import manager.ArgumentParser;
 import manager.FileLoader;
 import utilities.Shape;
 
@@ -27,7 +28,9 @@ public class AppDriver
 	public static void main( String[] args )
 	{
 
+		new ArgumentParser(args);
 
+		/*
 		// Testing Code by Josh
 		
 		Shape[] shapeArray = null;
@@ -49,7 +52,7 @@ public class AppDriver
 	    // sorts, asks user what sorting and what type
 	    app.sortWith();
 	    
-
+*/
 		
 
 

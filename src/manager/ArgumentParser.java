@@ -1,5 +1,11 @@
 package manager;
 
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import utilities.Shape;
+
 public class ArgumentParser {
 	private String fileName;
 	private char compareType;
@@ -11,17 +17,36 @@ public class ArgumentParser {
 	}
 	
 	private void parse(String[] args) {
+		Shape[] shapeArray = null;
+		AppManager app = new AppManager();
+		
 		for (String arg : args) {
 			String currentArg = arg.trim().toLowerCase();
 			
 			if (currentArg.startsWith("-f")) {
 				fileName = currentArg.substring(2);
+				//System.out.println("FileName is: "  + fileName);
+				
+				try { 
+			        shapeArray = FileLoader.loadShapes("res/" + fileName);
+			    } catch (FileNotFoundException e) {
+			        e.printStackTrace();
+			    }
+				ArrayList<Shape> shapeList = new ArrayList<>(Arrays.asList(shapeArray));
+				
+			    app.shapes = shapeList;
+				
 			} else if (currentArg.startsWith("-t")) {
 				compareType = currentArg.charAt(2);
+				
+				
+				
 			} else if (currentArg.startsWith("-s")) {
-				sortType = currentArg.charAt(2);
-			}
+				sortType = currentArg.charAt(2);		
+				
+			}		
 		}
+		app.sortWith(compareType, sortType);
 	}
 	
 	private void validate() {
